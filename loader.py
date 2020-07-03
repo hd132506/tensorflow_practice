@@ -10,11 +10,12 @@ def load_json(path):
 
 """
 Make dataset from files refered by indice
-Input: any list of indice from 0 to 29, 
+Input: any list of indice from 0 to 34, 
 Output: Trainable Tensor dataset (data, label)
 """
 def load_dataset(idx_list, mode='train', path='.'): 
     assert type(idx_list) is list
+    assert set(idx_list).issubset(set(range(35)))
     assert mode in ['train', 'test']
     
     datasets_x = []
